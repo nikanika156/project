@@ -1,0 +1,64 @@
+<div class="display-main">
+  <div class="filter-main">
+    <div class="filter-title">
+      <h1>Filter</h1>
+      <button (click)="clearFilters()" [disabled]="this.checked == 0">
+        <i class="fa-solid fa-rotate-right"></i>
+        Clear filter
+      </button>
+    </div>
+    <div class="gender filter">
+      <h1>Gender</h1>
+      <div *ngFor="let gender of this.filterGender; let i = index">
+        <label>
+          <input type="checkbox" />
+          <span class="check"></span>
+          {{ gender.gender }}
+          <span class="count">{{gender.count}}</span>
+        </label>
+      </div>
+    </div>
+    <div class="species filter">
+      <h1>species</h1>
+      <div *ngFor="let filter of this.filterSpecies; let i = index">
+        <label>
+          <input type="checkbox" />
+          <span class="check"></span>
+          {{ filter.species }}
+          <span class="count">{{filter.count}}</span>
+        </label>
+      </div>
+    </div>
+    <div class="location filter">
+      <h1>Location</h1>
+      <div class="location-scroll">
+        <ng-container *ngFor="let location of this.filterLocation">
+          <label>
+            <input #checkbox (click)="checknn(value,checkbox)" type="checkbox" />
+            <span class="check"></span>
+            <span #value>{{ location }}</span>
+          </label>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+  <div class="cards-main">
+    <div class="cards-title">
+      <select [(ngModel)]="this.hitsPerPage" name="hitsPerPage" id="">
+        <option value="20">20 hits per page</option>
+        <option value="40">40 hits per page</option>
+        <option value="60">60 hits per [age</option>
+      </select>
+    </div>
+    <div class="card-area">
+      <div class="card" *ngFor="let card of this.cards; let i = index">
+        <img src="{{ card.image }}" alt="" />
+        <div class="card-info">
+          <p class="character-species">{{ card.species }}</p>
+          <h1 class="character-name">{{ card.name }}</h1>
+          <span class="character-location">{{ card.location.name }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

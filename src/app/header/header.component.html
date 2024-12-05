@@ -1,0 +1,16 @@
+<header>
+  <div class="search-main">
+    <h1>Wubba Lubba Dub Dub</h1>
+    <form>
+      <div class="search-icon" (click)="deleteTxtBtn()">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+      <input type="text" name="search" [(ngModel)]="this.search">
+      <div class="deleteText" id="deleteTxtBtn" #deleteText>
+        <button>
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+    </form>
+  </div>
+</header>
