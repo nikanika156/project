@@ -5,7 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FormsModule } from '@angular/forms';
-import { CardsComponent } from './characters/cards/cards.component';
+import { CardsComponent } from './cards/cards.component';
+// import { TestComponent } from './test/test.component';
+// import { TestComponent } from './test/test.component';
 // import { FilterComponent } from './characters/filter/filter.component';
 
 @NgModule({
@@ -13,13 +15,12 @@ import { CardsComponent } from './characters/cards/cards.component';
     AppComponent,
     HeaderComponent,
     CardsComponent,
-    // FilterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
 
   ],
   providers: [],
